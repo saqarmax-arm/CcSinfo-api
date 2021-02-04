@@ -8,7 +8,7 @@ const redisConfig = {
   db: 0
 }
 
-exports.keys = 'qtuminfo-api'
+exports.keys = 'ccsinfo-api'
 
 exports.security = {
   csrf: {enable: false}
@@ -36,7 +36,7 @@ exports.ratelimit = {
 exports.io = {
   redis: {
     ...redisConfig,
-    key: 'qtuminfo-api-socket.io'
+    key: 'CcSinfo-api-socket.io'
   },
   namespace: {
     '/': {connectionMiddleware: ['connection']}
@@ -45,26 +45,26 @@ exports.io = {
 
 exports.sequelize = {
   dialect: 'mysql',
-  database: 'qtum_mainnet',
+  database: 'CCS_TEST',
   host: 'localhost',
   port: 3306,
-  username: 'qtum',
-  password: ''
+  username: 'root',
+  password: 'test1234567'
 }
 
-exports.qtum = {
+exports.CcS = {
   chain: 'mainnet'
 }
 
-exports.qtuminfo = {
-  path: path.resolve('..', 'qtuminfo'),
+exports.CcSinfo = {
+  path: path.resolve('..', 'CCSINFO/CcSinfo'),
   port: 3001,
   rpc: {
     protocol: 'http',
     host: 'localhost',
-    port: 3889,
-    user: 'user',
-    password: 'password'
+    port: 8332,
+    user: 'bitcoin',
+    password: 'bitcoin'
   }
 }
 
